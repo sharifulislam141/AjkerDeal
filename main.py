@@ -35,12 +35,12 @@ while True:
         print(f"Name: {customer_name}")
         print(f"Email: {customer_email}")
         print(f"Mobile: {customer_mobile}")
-        with open("value.txt", "w") as f:
+        
     # Write the variables' values to the file
-            f.write(f"Name: {customer_name}\n")
-            f.write(f"Email: {customer_email}\n")
-            f.write(f"Mobile {customer_mobile}\n")
-            f.write("_______________J")
+        f.write(f"Name: {customer_name}\n")
+        f.write(f"Email: {customer_email}\n")
+        f.write(f"Mobile {customer_mobile}\n")
+        f.write("_______________J")
         print(number)
     except Exception as e:
         print(f"Error: {e}")
