@@ -40,7 +40,7 @@ while True:
         f.write(f"Name: {customer_name}\n")
         f.write(f"Email: {customer_email}\n")
         f.write(f"Mobile {customer_mobile}\n")
-        f.write("_______________J")
+        f.write("_______________\n")
         print(number)
     except Exception as e:
         print(f"Error: {e}")
