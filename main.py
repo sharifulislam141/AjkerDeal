@@ -3,7 +3,9 @@ import threading
 from random import randint
 
 th = int(input("Enter Thread: "))
-f = open('cracked.txt','a') 
+f = open('cracked.txt', 'a')
+
+lock = threading.Lock()
 
 def phoneNumber():
     number = str("01")
@@ -37,11 +39,12 @@ def check_account():
             print(f"Name: {customer_name}")
             print(f"Email: {customer_email}")
             print(f"Mobile: {customer_mobile}")
-            # Write the variables' values to the file
-            f.write(f"Name: {customer_name}\n")
-            f.write(f"Email: {customer_email}\n")
-            f.write(f"Mobile: {customer_mobile}\n")
-            f.write("_______________\n")
+            with lock:
+                # Write the variables' values to the file
+                f.write(f"Name: {customer_name}\n")
+                f.write(f"Email: {customer_email}\n")
+                f.write(f"Mobile: {customer_mobile}\n")
+                f.write("_______________\n")
              
         except Exception as e:
             print(f"Error: {e}")
