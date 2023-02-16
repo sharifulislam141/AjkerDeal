@@ -1,4 +1,4 @@
-import requests
+ import requests
 import threading
 from random import randint
 
@@ -7,7 +7,7 @@ f = open('cracked.txt','a')
 
 def phoneNumber():
     number = str("01")
-    number1 =str(randint(6,9))
+    number1 = str(randint(6,9))
     number2 = str(randint(10000000,99999999))
     number3 =number + number1 + number2
     return(number3)
@@ -40,13 +40,19 @@ def check_account():
             # Write the variables' values to the file
             f.write(f"Name: {customer_name}\n")
             f.write(f"Email: {customer_email}\n")
-            f.write(f"Mobile {customer_mobile}\n")
+            f.write(f"Mobile: {customer_mobile}\n")
             f.write("_______________\n")
              
         except Exception as e:
             print(f"Error: {e}")
 
 if __name__ == '__main__':
-    for i in range(th): # create 10 threads to concurrently check account
+    threads = []
+    for i in range(th):
         t = threading.Thread(target=check_account)
         t.start()
+        threads.append(t)
+        
+    for t in threads:
+        t.join()
+    f.close()
